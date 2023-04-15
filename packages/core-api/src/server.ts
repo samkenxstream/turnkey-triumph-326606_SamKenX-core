@@ -73,13 +73,20 @@ export class Server {
         this.server.app.app = this.app;
         this.server.app.schemas = Schemas;
 
+        this.server.ext("onRequest", (request, h) => {
+            request.raw.res.on("finish", () => {
+                request.raw.req.socket?.destroy();
+            });
+            return h.continue;
+        });
+
         this.server.ext("onPreHandler", (request, h) => {
             request.headers["content-type"] = "application/json";
             return h.continue;
         });
 
         this.server.ext("onPreResponse", (request, h) => {
-            if (request.response.isBoom && request.response.isServer) {
+            if (request.response.isBoom && request.response.isServer && request.response.name !== "QueryFailedError") {
                 this.logger.error(request.response.stack);
             }
             return h.continue;
