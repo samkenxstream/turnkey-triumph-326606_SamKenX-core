@@ -1,6 +1,6 @@
 {
     "name": "@arkecosystem/core-api",
-    "version": "3.6.1",
+    "version": "3.7.0",
     "description": "Public API for ARK Core",
     "license": "MIT",
     "contributors": [
@@ -22,10 +22,10 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@arkecosystem/core-database": "3.6.1",
-        "@arkecosystem/core-kernel": "3.6.1",
-        "@arkecosystem/core-transactions": "3.6.1",
-        "@arkecosystem/crypto": "3.6.1",
+        "@arkecosystem/core-database": "3.7.0",
+        "@arkecosystem/core-kernel": "3.7.0",
+        "@arkecosystem/core-transactions": "3.7.0",
+        "@arkecosystem/crypto": "3.7.0",
         "@hapi/boom": "9.1.4",
         "@hapi/hapi": "20.1.5",
         "@hapi/hoek": "9.2.0",
@@ -34,12 +34,14 @@
         "node-cache": "5.1.2",
         "qs": "6.10.3",
         "rate-limiter-flexible": "1.3.2",
+        "semaphore": "1.1.0",
         "semver": "6.3.0"
     },
     "devDependencies": {
         "@types/hapi__boom": "7.4.1",
         "@types/hapi__joi": "17.1.7",
         "@types/ip": "1.1.0",
+        "@types/semaphore": "1.1.1",
         "@types/semver": "6.2.3"
     },
     "engines": {
